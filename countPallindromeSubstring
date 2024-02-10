@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int countSubstrings(string s) {
+
+        vector<vector<int>>dp(s.length(),vector<int>(s.length(),0));
+        int count=s.length();
+        for(int i=0;i<s.length();i++) dp[i][i]=1;
+        for(int i=s.length()-1;i>=0;i--)
+        {
+            for(int j=i+1;j<s.length();j++)
+            {
+                if(s[i]==s[j])
+                {
+                    dp[i][j]=(j-i==1 || dp[i+1][j-1]);
+                }
+                else
+                dp[i][j]=0;
+                count+=dp[i][j];
+            }
+        }
+
+        return count;
+
+    }
+};
