@@ -1,0 +1,31 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+
+int major_element;
+int count=0;
+
+for(auto e:nums)
+{
+    if(count==0)
+    {
+        major_element=e;count=1;
+    }
+    else
+    {
+        if(e==major_element)
+        {
+            count++;
+        }
+        else
+        count--;
+    }
+}
+
+return major_element;
+
+
+
+
+    }
+};
