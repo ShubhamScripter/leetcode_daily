@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string firstPalindrome(vector<string>& words) {
+
+
+        for(auto str:words)
+        {
+            int j=0;
+            for(;j<str.size()/2;j++)
+            {
+                if(str[j]!=str[str.size()-1-j])
+                break;
+            }
+            if(j==str.size()/2)
+            return str;
+        }
+
+        return "";
+        
+    }
+};
